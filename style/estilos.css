@@ -185,9 +185,9 @@ footer p {
   pointer-events: none;
   transition: 0.5s;
 }
-.form .formulario form .boton {
-  text-align: center;
+.form .formulario form .acepto {
   color: whitesmoke;
+  text-align: center;
 }
 .form .formulario form .boton input[type=submit] {
   width: 100%;
@@ -196,10 +196,6 @@ footer p {
   border-radius: 10px;
   color: whitesmoke;
   font-family: "Oswald", sans-serif;
-}
-.form .formulario form .registro {
-  text-align: center;
-  color: whitesmoke;
 }
 
 /*SERVICIOS*/
