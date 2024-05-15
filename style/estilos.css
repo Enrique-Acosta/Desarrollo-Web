@@ -337,7 +337,6 @@ footer p {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height: 50px;
   }
   body header {
     position: sticky;
@@ -387,9 +386,6 @@ footer p {
     left: 400px;
     height: 200px;
     position: relative;
-  }
-  body footer {
-    margin-top: -200px;
   }
   /*BOX-REGISTRO-INICIO DE SESION*/
   .form .formulario {
