@@ -1,0 +1,31 @@
+.nav-conteiner {
+  .nav-elements {
+    background-color: #524d43bd;
+
+    .firma-logo {
+      img {
+        height: 90px;
+      }
+
+      .champ {
+        display: none;
+      }
+
+      .edit-boton {
+        margin-right: 5%;
+        border: 1px solid black;
+      }
+
+      .ul-conteiner {
+        .li-conteiner {
+          .ido {
+            a {
+              color: whitesmoke;
+              font-family: "Oswald", sans-serif;
+            }
+          }
+        }
+      }
+    }
+  }
+}
