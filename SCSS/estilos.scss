@@ -7,15 +7,6 @@
 /*GENERAL STYLES*/
 body {
     background-color: #2d2b30;
-
-    a:visited {
-        color: white;
-    }
-
-    a:link {
-        color: white;
-    }
-
 }
 
 
@@ -51,6 +42,8 @@ main {
             color: transparent;
             background-clip: text;
             margin: 0;
+
+
         }
     }
 
@@ -223,8 +216,10 @@ footer {
     .grid-element-cuatro {
         background-color: #221F26;
         border-radius: 10px;
+        transition: box-shadow 0.3s ease-in-out;
         box-shadow: 5px 5px 10px #D39729;
         padding: 10px;
+
 
         p {
             text-align: center;
@@ -346,7 +341,7 @@ footer {
 /*DESKTOP-STYLE*/
 @media screen and (min-width:1280px) {
 
-    /*NAV-BAR*/
+    /*BG-IMG*/
     body {
         background-image: url(../img/yassuo.jpg);
         background-position: center center;
@@ -354,18 +349,33 @@ footer {
         background-attachment: fixed;
         background-size: cover;
 
-
-        header {
+        /*NAV-VAR*/
+        .nav-conteiner {
             position: sticky;
             top: 0;
             z-index: 1000;
+
+            .nav-elements {
+
+                .firma-logo {
+                    .ul-conteiner {
+                        .li-conteiner {
+                            font-size: clamp(0.5em, 2vw, 0.9em);
+                            margin-left: 40%;
+                            gap: 10px;
+                        }
+
+                    }
+                }
+            }
         }
 
-        main {
+        /*FIN-NAVBAR*/
 
+        /*MAIN*/
+        main {
             img {
                 display: none;
-
             }
 
             div {
@@ -373,6 +383,12 @@ footer {
 
                 h1 {
                     font-size: clamp(1em, 4vw, 5em);
+                    transition: text-shadow 0.3s ease-in-out;
+
+                    &:hover {
+                        text-shadow: 5px 0px 8px orangered;
+                    }
+
                 }
             }
         }
@@ -382,17 +398,37 @@ footer {
 
             h2 {
                 font-size: 3em;
-                filter: drop-shadow(20px 3px 5px #9CF8E5);
+                background-color: rgba(0, 0, 0, 0.5);
+                color: white;
+                padding: 10px;
+                margin-left: 5%;
+                margin-right: 5%;
+                border-radius: 10px;
+                transition: box-shadow 0.3s ease-in-out;
+
+                &:hover {
+                    box-shadow: 0px 3px 10px 5px #9CF8E5;
+                }
+
+
             }
 
             .home-text {
                 font-size: 2em;
+                background-color: transparent;
                 border: none;
-                text-decoration: underline;
-                text-decoration-color: #cca05e;
-                margin-top: 1%;
+                margin-top: 2%;
+                margin-left: 10%;
+                margin-right: 10%;
                 position: relative;
-                z-index: -2;
+                transition: box-shadow 0.3s ease-in-out;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 10px;
+                border-radius: 10px;
+
+                &:hover {
+                    box-shadow: 0px 3px 10px 5px #9CF8E5;
+                }
             }
 
             .home-text-dos {
@@ -400,51 +436,43 @@ footer {
                 margin-top: 2%;
                 margin-left: 15%;
                 margin-right: 15%;
-            }
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 10px;
+                border-radius: 10px;
+                transition: box-shadow 0.3s ease-in-out;
 
-            h3 {
-                margin-top: 1%;
-                z-index: 100;
-            }
+                &:hover {
+                    box-shadow: 0px 3px 10px 5px #9CF8E5;
+                }
 
-            .teemo {
-                display: flex;
-                justify-content: center;
-                margin-top: -420px;
-                margin-bottom: 180px;
-                left: 400px;
-                height: 200px;
-                position: relative;
+
+                h3 {
+                    margin-top: 1%;
+                    z-index: 100;
+                }
+
+                /*FIN-MAIN*/
 
             }
 
         }
 
-        footer {}
-    }
+        /*BOX-INC-REG*/
+        .form {
+            .formulario {
+                bottom: 3em;
+                padding: 10px;
 
-
-
-
-
-    /*BOX-REGISTRO-INICIO DE SESION*/
-    .form {
-        .formulario {
-            width: 500px;
-        }
-    }
-
-    /*SERVICIOS*/
-    .main {
-        height: 1100px;
-
-        .titulo-servicio {
-            h1 {
-                font-size: 40px;
+                form {
+                    .usuario {
+                        label {
+                            color: #221F26;
+                        }
+                    }
+                }
             }
         }
+
+
     }
-
-
-
 }

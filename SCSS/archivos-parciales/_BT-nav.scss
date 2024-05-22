@@ -1,4 +1,6 @@
 .nav-conteiner {
+  background-color: #524d43bd;
+
   .nav-elements {
     background-color: #524d43bd;
 
@@ -22,6 +24,11 @@
             a {
               color: whitesmoke;
               font-family: "Oswald", sans-serif;
+
+              &:hover {
+                color: #8ecae6;
+                text-decoration: underline;
+              }
             }
           }
         }
