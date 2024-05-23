@@ -2,31 +2,32 @@
 @import "archivos-parciales/reset";
 
 // MIXINS
-@import "mixins/mixins.scss";
+@import "mixins/mixins";
 
 /*GENERAL STYLES*/
 body {
     background-color: #2d2b30;
 }
 
-
 /*MOBILE-STYLES*/
 
 /*HOME*/
+
 /*NAV-BAR*/
 @import "archivos-parciales/BT-nav";
 
-/*IMG y TITULO*/
+/*MAIN*/
+/*IMG*/
 main {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
 
     img {
-        @include grid-cover-img;
-
+        @include grid-cover-img
     }
 
+    /*TITULO*/
     div {
         display: flex;
         position: relative;
@@ -49,13 +50,15 @@ main {
 
 }
 
-/*MAIN-TEXTOS*/
+/*TEXTOS-BIENVENIDA*/
 section {
     color: whitesmoke;
     margin-top: -20px;
     align-items: center;
 
-
+    .desktop-img {
+        display: none;
+    }
 
     h2 {
         display: flex;
@@ -83,7 +86,6 @@ section {
         margin-top: 5%;
         margin-left: 5%;
         margin-right: 5%;
-
     }
 
     .home-text-tres {
@@ -92,50 +94,69 @@ section {
         background: linear-gradient(rgb(255, 255, 255), rgb(250, 250, 202), rgb(223, 90, 13), red);
         color: transparent;
         background-clip: text;
-        margin-bottom: 10%;
-        padding-top: 2%;
     }
 
     .teemo {
         display: none;
     }
-
 }
 
 /*FIN-MAIN*/
 
-
 /*FOOTER*/
 footer {
-    display: flex;
     background-color: #e6e6e6;
-    justify-content: center;
-
+    text-align: center;
+    padding: 1%;
+    margin-top: 30%;
 
     p {
         color: black;
         font-family: "Caveat", cursive;
-        padding-top: 1em;
+        padding-top: 5%;
     }
+
 }
 
 /*FIN-FOOTER*/
 
+/*REGISTRO-INICIO DE SESION*/
+/*IMG-BG*/
+.name {
 
-/*CAJA DE REGISTRO-INICIO DE SESION*/
+    .img-bg-inc-reg {
+        display: grid;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+
+    div {
+
+        h1 {
+            display: none;
+        }
+    }
+}
+
+/*BOX-REGISTRO-INC*/
 @import "archivos-parciales/box-registro-inc";
 
 /*SERVICIOS*/
-
 /*IMAGEN DE FONDO*/
 .main {
     background-image: url(../img/lee\ sin.jpg);
     background-position: center center;
-    height: 1100px;
+    height: 800px;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 
+    /*TEXTOS-DE-SERVICIOS*/
     .titulo-servicio {
         display: flex;
         justify-content: center;
@@ -170,11 +191,20 @@ footer {
             padding-bottom: 15px;
             border-radius: 10px;
             box-shadow: 5px 5px 10px #D39729;
+
+            p {
+                text-align: center;
+            }
         }
     }
 }
 
-/*FIN-IMAGEN DE FONDO*/
+.serv-footer {
+    margin-top: -2%;
+}
+
+
+/*FIN-SERVICIOS*/
 
 /*NOSOTROS*/
 .grid-conteiner-dos {
@@ -203,23 +233,22 @@ footer {
     .grid-element-dos {
 
         img {
-            @include grid-cover-img;
+            @include grid-cover-img
         }
     }
 
     .grid-element-tres {
+
         img {
-            @include grid-cover-img;
+            @include grid-cover-img
         }
     }
 
     .grid-element-cuatro {
         background-color: #221F26;
         border-radius: 10px;
-        transition: box-shadow 0.3s ease-in-out;
         box-shadow: 5px 5px 10px #D39729;
         padding: 10px;
-
 
         p {
             text-align: center;
@@ -233,18 +262,20 @@ footer {
 /*TABLET-STYLES*/
 @media screen and (min-width: 800px) {
 
-    /*HOME*/
+    /*NAV.BAR*/
     .nav-conteiner {
+
         .nav-elements {
+
             .firma-logo {
+
                 .champ {
                     display: flex;
                     color: whitesmoke;
                     font-family: "Protest Revolution", sans-serif;
-                    font-size: clamp(3.2em, 2vw, 1em);
+                    font-size: clamp(2em, 2vw, 1em);
                     text-transform: uppercase;
                     margin-top: 2%;
-
                 }
 
                 .edit-boton {
@@ -252,8 +283,11 @@ footer {
                 }
 
                 .ul-conteiner {
+
                     .li-conteiner {
+
                         .ido {
+                            margin-left: 50px;
                             font-size: clamp(2em, 2vw, 1em);
                         }
                     }
@@ -262,9 +296,13 @@ footer {
         }
     }
 
+    .main {
+        height: 800px;
+    }
 
     /*HOME-TEXT*/
     .home {
+
         h2 {
             font-size: 100px;
             margin-top: -60px;
@@ -287,8 +325,10 @@ footer {
 
     /*REGISTRO-INCIO SESION*/
     .form {
+
         .formulario {
             width: 500px;
+            margin-top: 10%;
 
             h2 {
                 padding-top: 5%;
@@ -328,6 +368,7 @@ footer {
 
     /*FOOTER*/
     footer {
+
         p {
             font-size: 40px;
             padding-top: 20px;
@@ -338,16 +379,14 @@ footer {
     /*FIN-FOOTER*/
 }
 
+/*FIN-TABLET-STYLE*/
+
 /*DESKTOP-STYLE*/
 @media screen and (min-width:1280px) {
 
     /*BG-IMG*/
     body {
-        background-image: url(../img/yassuo.jpg);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: cover;
+        position: relative;
 
         /*NAV-VAR*/
         .nav-conteiner {
@@ -358,13 +397,14 @@ footer {
             .nav-elements {
 
                 .firma-logo {
+
                     .ul-conteiner {
+
                         .li-conteiner {
                             font-size: clamp(0.5em, 2vw, 0.9em);
                             margin-left: 40%;
                             gap: 10px;
                         }
-
                     }
                 }
             }
@@ -374,6 +414,7 @@ footer {
 
         /*MAIN*/
         main {
+
             img {
                 display: none;
             }
@@ -384,17 +425,29 @@ footer {
                 h1 {
                     font-size: clamp(1em, 4vw, 5em);
                     transition: text-shadow 0.3s ease-in-out;
+                    margin-left: 2%;
 
                     &:hover {
                         text-shadow: 5px 0px 8px orangered;
                     }
-
                 }
             }
         }
 
         .home {
             margin-top: 7%;
+
+            .desktop-img {
+                display: grid;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                filter: brightness(80%);
+            }
 
             h2 {
                 font-size: 3em;
@@ -409,8 +462,6 @@ footer {
                 &:hover {
                     box-shadow: 0px 3px 10px 5px #9CF8E5;
                 }
-
-
             }
 
             .home-text {
@@ -420,7 +471,6 @@ footer {
                 margin-top: 2%;
                 margin-left: 10%;
                 margin-right: 10%;
-                position: relative;
                 transition: box-shadow 0.3s ease-in-out;
                 background-color: rgba(0, 0, 0, 0.5);
                 padding: 10px;
@@ -444,35 +494,44 @@ footer {
                 &:hover {
                     box-shadow: 0px 3px 10px 5px #9CF8E5;
                 }
-
-
-                h3 {
-                    margin-top: 1%;
-                    z-index: 100;
-                }
-
-                /*FIN-MAIN*/
-
             }
 
         }
 
-        /*BOX-INC-REG*/
-        .form {
-            .formulario {
-                bottom: 3em;
-                padding: 10px;
+        /*FIN-HOME*/
 
-                form {
-                    .usuario {
-                        label {
-                            color: #221F26;
-                        }
+        /*el h1 estorbaba aqui*/
+        .name {
+
+            div {
+
+                h1 {
+                    display: none; 
+                }
+            }
+        }
+
+        /*BOX-INC-REG*/
+        .form{
+
+            .formulario{
+                margin-top: 2em;
+            }
+        }
+        
+        /*AMPLIACION DE IMAGEN DE NOSOTROS*/
+        .main {
+            height: 1300px;
+
+            .grid-conteiner-dos {
+
+                .grid-element-tres,.grid-element-dos {
+
+                    img {
+                        height: 60vh;
                     }
                 }
             }
         }
-
-
     }
 }

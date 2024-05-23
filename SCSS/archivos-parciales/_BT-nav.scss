@@ -2,7 +2,6 @@
   background-color: #524d43bd;
 
   .nav-elements {
-    background-color: #524d43bd;
 
     .firma-logo {
       img {
@@ -19,16 +18,59 @@
       }
 
       .ul-conteiner {
+
         .li-conteiner {
+
           .ido {
+
             a {
               color: whitesmoke;
               font-family: "Oswald", sans-serif;
+              transition: all 0.3s ease;
+              background: linear-gradient(to right, #ff6347, #ff6347);
+              background-size: 0% 100%;
+              background-position: 0 100%;
+              background-repeat: no-repeat;
+              -webkit-background-clip: text;
+              background-clip: text;
+
+
+              /* Pseudo-elemento */
+              &::before {
+                content: attr(data-text);
+                /* Contenido basado en el atributo data-text */
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                display: block;
+                color: whitesmoke;
+                z-index: -1;
+              }
 
               &:hover {
-                color: #8ecae6;
-                text-decoration: underline;
+                background-size: 100% 100%;
+                /* Cambia el tamaño del fondo para el efecto de izquierda a derecha */
+                color: transparent;
+                /* Asegura que el texto base sea transparente */
               }
+
+              &:hover::before {
+                color: #000000;
+                /* Cambia el color del pseudo-elemento en hover */
+              }
+
+
+              // color: whitesmoke;
+              // font-family: "Oswald", sans-serif;
+
+
+              // &:hover {
+              //   color: linear-gradient(to right, black);
+              //   text-decoration: underline;
+
+              // }
             }
           }
         }

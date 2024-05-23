@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*RESET*/
 * {
   padding: 0;
@@ -16,9 +17,6 @@ body {
 .nav-conteiner {
   background-color: rgba(82, 77, 67, 0.7411764706);
 }
-.nav-conteiner .nav-elements {
-  background-color: rgba(82, 77, 67, 0.7411764706);
-}
 .nav-conteiner .nav-elements .firma-logo img {
   height: 90px;
 }
@@ -32,17 +30,45 @@ body {
 .nav-conteiner .nav-elements .firma-logo .ul-conteiner .li-conteiner .ido a {
   color: whitesmoke;
   font-family: "Oswald", sans-serif;
+  transition: all 0.3s ease;
+  background: linear-gradient(to right, #ff6347, #ff6347);
+  background-size: 0% 100%;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* Pseudo-elemento */
+}
+.nav-conteiner .nav-elements .firma-logo .ul-conteiner .li-conteiner .ido a::before {
+  content: attr(data-text);
+  /* Contenido basado en el atributo data-text */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: whitesmoke;
+  z-index: -1;
 }
 .nav-conteiner .nav-elements .firma-logo .ul-conteiner .li-conteiner .ido a:hover {
-  color: #8ecae6;
-  text-decoration: underline;
+  background-size: 100% 100%;
+  /* Cambia el tamaño del fondo para el efecto de izquierda a derecha */
+  color: transparent;
+  /* Asegura que el texto base sea transparente */
+}
+.nav-conteiner .nav-elements .firma-logo .ul-conteiner .li-conteiner .ido a:hover::before {
+  color: #000000;
+  /* Cambia el color del pseudo-elemento en hover */
 }
 
-/*IMG y TITULO*/
+/*MAIN*/
+/*IMG*/
 main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  /*TITULO*/
 }
 main img {
   height: 35vh;
@@ -66,11 +92,14 @@ main div h1 {
   margin: 0;
 }
 
-/*MAIN-TEXTOS*/
+/*TEXTOS-BIENVENIDA*/
 section {
   color: whitesmoke;
   margin-top: -20px;
   align-items: center;
+}
+section .desktop-img {
+  display: none;
 }
 section h2 {
   display: flex;
@@ -102,8 +131,6 @@ section .home-text-tres {
   background: linear-gradient(rgb(255, 255, 255), rgb(250, 250, 202), rgb(223, 90, 13), red);
   color: transparent;
   background-clip: text;
-  margin-bottom: 10%;
-  padding-top: 2%;
 }
 section .teemo {
   display: none;
@@ -112,18 +139,35 @@ section .teemo {
 /*FIN-MAIN*/
 /*FOOTER*/
 footer {
-  display: flex;
   background-color: #e6e6e6;
-  justify-content: center;
+  text-align: center;
+  padding: 1%;
+  margin-top: 30%;
 }
 footer p {
   color: black;
   font-family: "Caveat", cursive;
-  padding-top: 1em;
+  padding-top: 5%;
 }
 
 /*FIN-FOOTER*/
-/*CAJA DE REGISTRO-INICIO DE SESION*/
+/*REGISTRO-INICIO DE SESION*/
+/*IMG-BG*/
+.name .img-bg-inc-reg {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.name div h1 {
+  display: none;
+}
+
+/*BOX-REGISTRO-INC*/
 .form {
   display: flex;
   justify-content: center;
@@ -133,13 +177,12 @@ footer p {
 .form .formulario {
   position: relative;
   left: 12%;
-  margin-top: 2%;
+  margin-top: 20%;
   width: 300px;
   background: #333333;
   border-radius: 10px;
   font-family: "Oswald", sans-serif;
   font-size: 17px;
-  padding-bottom: 50px;
   box-shadow: 10px 20px 40px black;
 }
 .form .formulario h2 {
@@ -209,10 +252,11 @@ footer p {
 .main {
   background-image: url(../img/lee\ sin.jpg);
   background-position: center center;
-  height: 1100px;
+  height: 800px;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  /*TEXTOS-DE-SERVICIOS*/
 }
 .main .titulo-servicio {
   display: flex;
@@ -247,8 +291,15 @@ footer p {
   border-radius: 10px;
   box-shadow: 5px 5px 10px #D39729;
 }
+.main .grid-conteiner .grid-element p {
+  text-align: center;
+}
 
-/*FIN-IMAGEN DE FONDO*/
+.serv-footer {
+  margin-top: -2%;
+}
+
+/*FIN-SERVICIOS*/
 /*NOSOTROS*/
 .grid-conteiner-dos {
   display: grid;
@@ -283,7 +334,6 @@ footer p {
 .grid-conteiner-dos .grid-element-cuatro {
   background-color: #221F26;
   border-radius: 10px;
-  transition: box-shadow 0.3s ease-in-out;
   box-shadow: 5px 5px 10px #D39729;
   padding: 10px;
 }
@@ -295,12 +345,12 @@ footer p {
 /*MEDIA-QUERYS*/
 /*TABLET-STYLES*/
 @media screen and (min-width: 800px) {
-  /*HOME*/
+  /*NAV.BAR*/
   .nav-conteiner .nav-elements .firma-logo .champ {
     display: flex;
     color: whitesmoke;
     font-family: "Protest Revolution", sans-serif;
-    font-size: clamp(3.2em, 2vw, 1em);
+    font-size: clamp(2em, 2vw, 1em);
     text-transform: uppercase;
     margin-top: 2%;
   }
@@ -308,7 +358,11 @@ footer p {
     transform: scale(1.5);
   }
   .nav-conteiner .nav-elements .firma-logo .ul-conteiner .li-conteiner .ido {
+    margin-left: 50px;
     font-size: clamp(2em, 2vw, 1em);
+  }
+  .main {
+    height: 800px;
   }
   /*HOME-TEXT*/
   .home h2 {
@@ -329,6 +383,7 @@ footer p {
   /*REGISTRO-INCIO SESION*/
   .form .formulario {
     width: 500px;
+    margin-top: 10%;
   }
   .form .formulario h2 {
     padding-top: 5%;
@@ -361,19 +416,19 @@ footer p {
   }
   /*FIN-FOOTER*/
 }
+/*FIN-TABLET-STYLE*/
 /*DESKTOP-STYLE*/
 @media screen and (min-width: 1280px) {
   /*BG-IMG*/
   body {
-    background-image: url(../img/yassuo.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    position: relative;
     /*NAV-VAR*/
     /*FIN-NAVBAR*/
     /*MAIN*/
+    /*FIN-HOME*/
+    /*el h1 estorbaba aqui*/
     /*BOX-INC-REG*/
+    /*AMPLIACION DE IMAGEN DE NOSOTROS*/
   }
   body .nav-conteiner {
     position: sticky;
@@ -394,12 +449,24 @@ footer p {
   body main div h1 {
     font-size: clamp(1em, 4vw, 5em);
     transition: text-shadow 0.3s ease-in-out;
+    margin-left: 2%;
   }
   body main div h1:hover {
     text-shadow: 5px 0px 8px orangered;
   }
   body .home {
     margin-top: 7%;
+  }
+  body .home .desktop-img {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(80%);
   }
   body .home h2 {
     font-size: 3em;
@@ -421,7 +488,6 @@ footer p {
     margin-top: 2%;
     margin-left: 10%;
     margin-right: 10%;
-    position: relative;
     transition: box-shadow 0.3s ease-in-out;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 10px;
@@ -439,21 +505,21 @@ footer p {
     padding: 10px;
     border-radius: 10px;
     transition: box-shadow 0.3s ease-in-out;
-    /*FIN-MAIN*/
   }
   body .home .home-text-dos:hover {
     box-shadow: 0px 3px 10px 5px #9CF8E5;
   }
-  body .home .home-text-dos h3 {
-    margin-top: 1%;
-    z-index: 100;
+  body .name div h1 {
+    display: none;
   }
   body .form .formulario {
-    bottom: 3em;
-    padding: 10px;
+    margin-top: 2em;
   }
-  body .form .formulario form .usuario label {
-    color: #221F26;
+  body .main {
+    height: 1300px;
+  }
+  body .main .grid-conteiner-dos .grid-element-tres img, body .main .grid-conteiner-dos .grid-element-dos img {
+    height: 60vh;
   }
 }
 
